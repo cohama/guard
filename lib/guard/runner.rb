@@ -39,8 +39,8 @@ module Guard
       ::Guard::UI.clearable
       _scoped_plugins do |guard|
         modified_paths = ::Guard::Watcher.match_files(guard, modified)
-        added_paths    = ::Guard::Watcher.match_files(guard, added)
-        removed_paths  = ::Guard::Watcher.match_files(guard, removed)
+        added_paths    = []
+        removed_paths  = []
 
         ::Guard::UI.clear if _clearable?(guard, modified_paths, added_paths, removed_paths)
 
